@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Matrix | Career</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        p{
+            margin: .3rem 0;
+            padding: 0;
+        }
+
+        span{
+            color: #435;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .feature {
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        .feature i {
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cta button {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+
+            .feature {
+                width: 100%;
+            }
+        }
+        
+        .job-listing {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .job-card {
+            width: 300px;
+            margin: 10px;
+            text-align: left;
+            padding: 20px;
+            background-color: #c9d9f9;
+            border: 1px solid gray;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-title h3 {
+            font-size: 1.5rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .job-location {
+            padding: 0;
+            margin: 0;
+        }
+        .job-salary {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .job-apply button {
+            background-color: blue;
+            margin-top: 2rem;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .job-apply button:hover {
+            background-color: #345;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Career at Team Matrix</h1>
+    </header>
+
+    <div class="container">
+        <div class="section-title">
+            <h2>Welcome to Team Matrix!</h2>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-search"></i>
+                <h3>Job Search</h3>
+                <p>Find your dream job with our comprehensive job search engine.</p>
+            </div>
+
+            <div class="feature">
+                <i class="fas fa-user-graduate"></i>
+                <h3>Career Development</h3>
+                <p>Get personalized career advice and resources to help you succeed.</p>
+            </div>
+
+            <div class="feature">
+                <i class="fas fa-network-wired"></i>
+                <h3>Networking</h3>
+                <p>Connect with other professionals and expand your network.</p>
+            </div>
+        </div>
+
+        <!-- <div class="cta">
+            <button>Explore Our Services</button>
+        </div>
+ -->
+        
+        <div class="section-title">
+            <h2>Featured Jobs</h2>
+        </div>
+
+        <div class="job-listing">
+            
+        {%for job in jobs:%}
+            <div class="job-card">
+                <div class="job-title">
+                    <h3>{{job["role"]}}</h3>
+                </div>
+
+                <div class="job-location">
+                    <p><b>Location:</b> <span>{{job["location"]}}</span></p>
+                </div>
+                <div class="job-salary">
+                    <p><b>Salary:</b> <span>{{job["salary"]}} {{job["currency"]}}</span></p>
+                </div>
+                <div class="job-apply">
+                    <button>Apply Now</button>
+                </div>
+            </div>
+        {%endfor%}
+            
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Team Matrix. All rights reserved.</p>
+    </footer>
+</body>
+</html>
